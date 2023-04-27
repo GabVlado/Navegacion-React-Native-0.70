@@ -4,6 +4,7 @@ import { DrawerContentComponentProps, DrawerContentScrollView, createDrawerNavig
 import { StackNavigator } from './StackNavigator';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { styles } from '../theme/appTheme';
+import { Tabs } from './Tabs';
 
 const Drawer = createDrawerNavigator();
 
@@ -25,7 +26,7 @@ export const MenuLateral = () => {
             drawerContent={ (props) => <MneuInterno {...props} /> }
 
         >
-            <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+            <Drawer.Screen name="Tabs" component={Tabs} />
             <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
         </Drawer.Navigator>
     );
@@ -48,9 +49,9 @@ const MneuInterno = ( {navigation }: DrawerContentComponentProps  ) => {
 
                 <Pressable
                     style={styles.menuBoton}
-                    onPress={ () => navigation.navigate('StackNavigator') }
+                    onPress={ () => navigation.navigate('Tabs') }
                 >
-                    <Text style={styles.menuText}>Navegacion </Text>
+                    <Text style={styles.menuText}>Tabs </Text>
                 </Pressable>
 
                 <Pressable
